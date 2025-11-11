@@ -1,0 +1,23 @@
+Creating snow
+
+I wanted to create a snow landscape but since the ground asset seems to be a combined prefab, i did not know how to change the material of each part of the ground asset without changing the whole look of the scene. Therefore i decided just to add the particles and some snowflakes landing on the ground, making it look like early stage snow that does not cover the whole ground. This is what I ended up doing.
+
+- Added snow particles
+- Created a gameobject which should appear like snow laying on the ground.
+- Assigned snow material, normal , occlusion and height map
+- Added a script that spawns snowflakes on the ground at a set rate. It randomly picks positions above the ground within a defined area, uses a raycast to find the exact ground position, and instantiates a snow prefab.
+- I had to debug the raycast, because the snowprefab did not appear and therefore i had to check if the raycast was actually detecting the ground object, but it seemed that this was actually not the problem.
+- I added an initial delay to avoid the snow prefab appearing before the snow particles hit the ground.
+
+Adding human characters
+
+The next thing I did was to add an another challenge to the game. I added some workers (humans), that walks between the two mills. If the hay machine hit one of the workers with Hay, the person dies and the player becomes "game over". I also added an angel extracted from the human when he dies. For this challenge I did the following:
+
+- Imported some very simple characters (Human and angel). 
+- Spawned the human characters from the mills that walk across the field.
+- Changing the script “DestroyOnTrigger” to also detect when a human is hit by the hay.
+- When this happens the “Game Over” UI component will appear.
+- If a human is hit it will spawn an angel character from the humans position indicating that the human died of being hit by the hay.
+- I did this by creating a script called “AngelBehavior”.
+- Also i applied the rotate script to the angel so it looked a bit like it was flying (not very realistic, but just to see how if I could apply the script multiple gameobjects).
+- I created a boundary for the human to disappear so it would not just continue endlessly into infinity.
