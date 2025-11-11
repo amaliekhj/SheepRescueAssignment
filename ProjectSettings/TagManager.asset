@@ -8,6 +8,7 @@ TagManager:
   - DropSheep
   - Hay
   - Character
+  - Sheep
   layers:
   - Default
   - TransparentFX
